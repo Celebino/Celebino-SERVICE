@@ -1,4 +1,4 @@
-package com.celebino.config;
+package org.celebino.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +43,7 @@ public class Hibernate {
 
 	        // Pacote base para procurar classes anotadas com @Entity
 	        // Substitui o arquivo beans.xml
-	        emf.setPackagesToScan("com.celebino");
+	        emf.setPackagesToScan("org.celebino");
 	        emf.setDataSource(dataSource);
 	        emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 	        emf.setJpaPropertyMap(properties);

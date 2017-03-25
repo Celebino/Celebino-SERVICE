@@ -1,6 +1,4 @@
-package com.celebino.persistence.model;
-
-import java.sql.Date;
+package org.celebino.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,97 +8,94 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class GardenStatus {
+public class Garden {
 	
 	@Id @GeneratedValue
 	@Column
 	private Long id;
 	
 	@Column
-	private Long gardenId;
-	
-	@Column
-	private Date date;
-	//hour
+	private String userId;
+	 
+	@Column	
+	private int soilHumidity;
 	
 	@Column
 	private int sunLight;
-	
-	@Column
-	private int soilHumidity;
 	
 	@Column
 	private int airHumidity;
 	
 	@Column
 	private int airTemperature;
-	
-	
-	public GardenStatus(Long id, Long gardenId, Date date, int sunLight, int soilHumidity, int airHumidity,
-			int airTemperature) {
+
+	public Garden(Long id, String userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
 		super();
 		this.id = id;
-		this.gardenId = gardenId;
-		this.date = date;
-		this.sunLight = sunLight;
+		this.userId = userId;
 		this.soilHumidity = soilHumidity;
+		this.sunLight = sunLight;
 		this.airHumidity = airHumidity;
 		this.airTemperature = airTemperature;
 	}
-	
-	
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getGardenId() {
-		return gardenId;
+
+	public String getUserId() {
+		return userId;
 	}
-	public void setGardenId(Long gardenId) {
-		this.gardenId = gardenId;
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	public int getSunLight() {
-		return sunLight;
-	}
-	public void setSunLight(int sunLight) {
-		this.sunLight = sunLight;
-	}
+
 	public int getSoilHumidity() {
 		return soilHumidity;
 	}
+
 	public void setSoilHumidity(int soilHumidity) {
 		this.soilHumidity = soilHumidity;
 	}
+
+	public int getSunLight() {
+		return sunLight;
+	}
+
+	public void setSunLight(int sunLight) {
+		this.sunLight = sunLight;
+	}
+
 	public int getAirHumidity() {
 		return airHumidity;
 	}
+
 	public void setAirHumidity(int airHumidity) {
 		this.airHumidity = airHumidity;
 	}
+
 	public int getAirTemperature() {
 		return airTemperature;
 	}
+
 	public void setAirTemperature(int airTemperature) {
 		this.airTemperature = airTemperature;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "GardenStatus [id=" + id + ", id_garden=" + gardenId + ", date=" + date + ", sunLight=" + sunLight
-				+ ", soilHumidity=" + soilHumidity + ", airHumidity=" + airHumidity + ", airTemperature="
-				+ airTemperature + "]";
+		return "Garden [id=" + id + ", userId=" + userId + ", soilHumidity=" + soilHumidity + ", sunLight=" + sunLight
+				+ ", airHumidity=" + airHumidity + ", airTemperature=" + airTemperature + "]";
 	}
+	
+	
+	
+	
 
 	
 	

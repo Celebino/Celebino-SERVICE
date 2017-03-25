@@ -1,11 +1,10 @@
-package com.celebino.main;
+package org.celebino.main;
 
+import org.celebino.persistence.dao.UserDao;
+import org.celebino.persistence.model.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.celebino.persistence.dao.UserDao;
-import com.celebino.persistence.model.User;
 
 public class Main {
 	public static void main(String[] args) {

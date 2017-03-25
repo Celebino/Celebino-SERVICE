@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
 // Procura por componentes a partir desse pacote.
-@ComponentScan(basePackages = "com.celebino")
+@ComponentScan(basePackages = "org.celebino")
 // Ativa o Spring Data JPA
 @EnableJpaRepositories
 public class Config {

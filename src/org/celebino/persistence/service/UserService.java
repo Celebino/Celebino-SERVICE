@@ -1,12 +1,11 @@
-package com.celebino.persistence.service;
+package org.celebino.persistence.service;
 
 import java.util.List;
 
+import org.celebino.persistence.dao.UserDAO;
+import org.celebino.persistence.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.celebino.persistence.dao.UserDAO;
-import com.celebino.persistence.model.User;
 
 @Component
 public class UserService {

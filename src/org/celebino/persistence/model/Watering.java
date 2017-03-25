@@ -1,4 +1,4 @@
-package com.celebino.persistence.model;
+package org.celebino.persistence.model;
 
 import java.sql.Date;
 

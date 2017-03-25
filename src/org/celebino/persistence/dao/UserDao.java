@@ -1,9 +1,8 @@
-package com.celebino.persistence.dao;
+package org.celebino.persistence.dao;
 
+import org.celebino.persistence.model.ArtificialLight;
+import org.celebino.persistence.model.User;
 import org.springframework.data.repository.CrudRepository;
-
-import com.celebino.persistence.model.ArtificialLight;
-import com.celebino.persistence.model.User;
 
 public interface UserDao extends CrudRepository<User, String>{
 	public User findByUsername(String username);

@@ -15,7 +15,7 @@ public class Garden {
 	private Long id;
 	
 	@Column
-	private String userId;
+	private Long userId;
 	 
 	@Column	
 	private int soilHumidity;
@@ -29,7 +29,7 @@ public class Garden {
 	@Column
 	private int airTemperature;
 
-	public Garden(Long id, String userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
+	public Garden(Long id, Long userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
 		super();
 		this.id = id;
 		this.userId = userId;
@@ -48,11 +48,11 @@ public class Garden {
 	}
 
 	
-	public String getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

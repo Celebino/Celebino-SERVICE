@@ -10,16 +10,18 @@ import javax.persistence.Table;
 @Table
 public class User {
 	
-	@Column
-	private String name;
-	
 	@Id @GeneratedValue
 	@Column
+	private Long Id;
+	
+	@Column(unique = true)
+	private String email;
+	
+	@Column(unique = true)
 	private String username;
 	
-	@Id @GeneratedValue
 	@Column
-	private String email;
+	private String name;
 	
 	@Column
 	private String password;
@@ -29,16 +31,25 @@ public class User {
 	
 	public User(){}
 	
-	public User(String name, String username, String email, String number, String password) {
+	public User(Long id, String email, String username, String name, String password, String number) {
 		super();
-		this.name = name;
-		this.username = username;
+		Id = id;
 		this.email = email;
+		this.username = username;
+		this.name = name;
 		this.password = password;
 		this.number = number;
 	}
-	
-	
+
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
 	public String getName() {
 		return name;
 	}

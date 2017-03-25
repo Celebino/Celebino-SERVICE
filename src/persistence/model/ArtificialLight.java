@@ -1,4 +1,4 @@
-package model;
+package persistence.model;
 
 import java.sql.Date;
 

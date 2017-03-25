@@ -1,4 +1,6 @@
-package model;
+package persistence.model;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,94 +10,97 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_GARDEN")
-public class Garden {
+public class GardenStatus {
 	
 	@Id @GeneratedValue
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "userId")
-	private String userId;
-	 
-	@Column(name = "soilHumidity")
-	private int soilHumidity;
+	@Column(name = "gardenId")
+	private int gardenId;
+	
+	@Column(name = "date")
+	private Date date;
+	//hour
 	
 	@Column(name = "sunLight")
 	private int sunLight;
+	
+	@Column(name = "soilHumidity")
+	private int soilHumidity;
 	
 	@Column(name = "airHumidity")
 	private int airHumidity;
 	
 	@Column(name = "airTemperature")
 	private int airTemperature;
-
-	public Garden(int id, String userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
+	
+	
+	public GardenStatus(int id, int gardenId, Date date, int sunLight, int soilHumidity, int airHumidity,
+			int airTemperature) {
 		super();
 		this.id = id;
-		this.userId = userId;
-		this.soilHumidity = soilHumidity;
+		this.gardenId = gardenId;
+		this.date = date;
 		this.sunLight = sunLight;
+		this.soilHumidity = soilHumidity;
 		this.airHumidity = airHumidity;
 		this.airTemperature = airTemperature;
 	}
-
+	
+	
+	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getUserId() {
-		return userId;
+	public int getGardenId() {
+		return gardenId;
 	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setGardenId(int gardenId) {
+		this.gardenId = gardenId;
 	}
-
-	public int getSoilHumidity() {
-		return soilHumidity;
+	public Date getDate() {
+		return date;
 	}
-
-	public void setSoilHumidity(int soilHumidity) {
-		this.soilHumidity = soilHumidity;
+	public void setDate(Date date) {
+		this.date = date;
 	}
-
 	public int getSunLight() {
 		return sunLight;
 	}
-
 	public void setSunLight(int sunLight) {
 		this.sunLight = sunLight;
 	}
-
+	public int getSoilHumidity() {
+		return soilHumidity;
+	}
+	public void setSoilHumidity(int soilHumidity) {
+		this.soilHumidity = soilHumidity;
+	}
 	public int getAirHumidity() {
 		return airHumidity;
 	}
-
 	public void setAirHumidity(int airHumidity) {
 		this.airHumidity = airHumidity;
 	}
-
 	public int getAirTemperature() {
 		return airTemperature;
 	}
-
 	public void setAirTemperature(int airTemperature) {
 		this.airTemperature = airTemperature;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Garden [id=" + id + ", userId=" + userId + ", soilHumidity=" + soilHumidity + ", sunLight=" + sunLight
-				+ ", airHumidity=" + airHumidity + ", airTemperature=" + airTemperature + "]";
+		return "GardenStatus [id=" + id + ", id_garden=" + gardenId + ", date=" + date + ", sunLight=" + sunLight
+				+ ", soilHumidity=" + soilHumidity + ", airHumidity=" + airHumidity + ", airTemperature="
+				+ airTemperature + "]";
 	}
-	
-	
-	
-	
 
 	
 	

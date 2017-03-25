@@ -47,6 +47,7 @@ public class Garden {
 		this.id = id;
 	}
 
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -55,6 +56,7 @@ public class Garden {
 		this.userId = userId;
 	}
 
+	
 	public int getSoilHumidity() {
 		return soilHumidity;
 	}
@@ -63,6 +65,7 @@ public class Garden {
 		this.soilHumidity = soilHumidity;
 	}
 
+	
 	public int getSunLight() {
 		return sunLight;
 	}
@@ -71,6 +74,7 @@ public class Garden {
 		this.sunLight = sunLight;
 	}
 
+	
 	public int getAirHumidity() {
 		return airHumidity;
 	}
@@ -79,6 +83,7 @@ public class Garden {
 		this.airHumidity = airHumidity;
 	}
 
+	
 	public int getAirTemperature() {
 		return airTemperature;
 	}
@@ -87,17 +92,12 @@ public class Garden {
 		this.airTemperature = airTemperature;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Garden [id=" + id + ", userId=" + userId + ", soilHumidity=" + soilHumidity + ", sunLight=" + sunLight
 				+ ", airHumidity=" + airHumidity + ", airTemperature=" + airTemperature + "]";
 	}
-	
-	
-	
-	
 
-	
-	
 
 }

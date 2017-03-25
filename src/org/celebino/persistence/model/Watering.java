@@ -29,29 +29,37 @@ public class Watering {
 		this.gardenId = gardenId;
 		this.date = date;
 	}
+	
+	
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	
 	public Long getGardenId() {
 		return gardenId;
 	}
 	public void setGardenId(Long gardenId) {
 		this.gardenId = gardenId;
 	}
+	
+	
 	public Date getDate() {
 		return date;
 	}
+	
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
 	@Override
 	public String toString() {
 		return "Watering [id=" + id + ", id_garden=" + gardenId + ", date=" + date + "]";
 	}
 
-	
 	
 }

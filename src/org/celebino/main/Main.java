@@ -4,11 +4,12 @@ import org.celebino.extras.Config;
 import org.celebino.persistence.dao.UserDao;
 import org.celebino.persistence.model.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.ApplicationContext;
 
 public class Main {
 	public static void main(String[] args) {
         // Acessa o contexto do Spring Framework a partir de um método estático.
-        ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         UserDao userDao = context.getBean(UserDao.class);
         User user = new User();
         user.setName("thay");

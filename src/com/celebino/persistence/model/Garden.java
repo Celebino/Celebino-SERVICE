@@ -1,4 +1,4 @@
-package persistence.model;
+package com.celebino.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,29 +7,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_GARDEN")
+@Table
 public class Garden {
 	
 	@Id @GeneratedValue
-	@Column(name = "id")
-	private int id;
+	@Column
+	private Long id;
 	
-	@Column(name = "userId")
+	@Column
 	private String userId;
 	 
-	@Column(name = "soilHumidity")
+	@Column	
 	private int soilHumidity;
 	
-	@Column(name = "sunLight")
+	@Column
 	private int sunLight;
 	
-	@Column(name = "airHumidity")
+	@Column
 	private int airHumidity;
 	
-	@Column(name = "airTemperature")
+	@Column
 	private int airTemperature;
 
-	public Garden(int id, String userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
+	public Garden(Long id, String userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
 		super();
 		this.id = id;
 		this.userId = userId;
@@ -39,11 +39,11 @@ public class Garden {
 		this.airTemperature = airTemperature;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

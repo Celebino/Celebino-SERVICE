@@ -1,4 +1,4 @@
-package persistence.model;
+package com.celebino.persistence.model;
 
 import java.sql.Date;
 
@@ -9,32 +9,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_GARDEN")
+@Table
 public class ArtificialLight {
 	
 	@Id @GeneratedValue
-	@Column(name = "id")
-	private int id;
+	@Column
+	private Long id;
 	
-	@Column(name = "gardenId")
+	@Column
 	private int gardenId;
 	
-	@Column(name = "date")
+	@Column
 	private Date date;
 	//hour
 
 	
 
-	public ArtificialLight(int id, int gardenId, Date date) {
+	public ArtificialLight(Long id, int gardenId, Date date) {
 		super();
 		this.id = id;
 		this.gardenId = gardenId;
 		this.date = date;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public int getGardenId() {

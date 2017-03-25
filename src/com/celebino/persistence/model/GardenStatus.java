@@ -1,4 +1,4 @@
-package persistence.model;
+package com.celebino.persistence.model;
 
 import java.sql.Date;
 
@@ -9,34 +9,34 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_GARDEN")
+@Table
 public class GardenStatus {
 	
 	@Id @GeneratedValue
-	@Column(name = "id")
-	private int id;
+	@Column
+	private Long id;
 	
-	@Column(name = "gardenId")
-	private int gardenId;
+	@Column
+	private Long gardenId;
 	
-	@Column(name = "date")
+	@Column
 	private Date date;
 	//hour
 	
-	@Column(name = "sunLight")
+	@Column
 	private int sunLight;
 	
-	@Column(name = "soilHumidity")
+	@Column
 	private int soilHumidity;
 	
-	@Column(name = "airHumidity")
+	@Column
 	private int airHumidity;
 	
-	@Column(name = "airTemperature")
+	@Column
 	private int airTemperature;
 	
 	
-	public GardenStatus(int id, int gardenId, Date date, int sunLight, int soilHumidity, int airHumidity,
+	public GardenStatus(Long id, Long gardenId, Date date, int sunLight, int soilHumidity, int airHumidity,
 			int airTemperature) {
 		super();
 		this.id = id;
@@ -50,16 +50,16 @@ public class GardenStatus {
 	
 	
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getGardenId() {
+	public Long getGardenId() {
 		return gardenId;
 	}
-	public void setGardenId(int gardenId) {
+	public void setGardenId(Long gardenId) {
 		this.gardenId = gardenId;
 	}
 	public Date getDate() {

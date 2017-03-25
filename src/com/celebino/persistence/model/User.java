@@ -1,4 +1,4 @@
-package persistence.model;
+package com.celebino.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,26 +7,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_GARDEN")
+@Table
 public class User {
 	
-	@Column(name = "name")
+	@Column
 	private String name;
 	
 	@Id @GeneratedValue
-	@Column(name = "username")
+	@Column
 	private String username;
 	
 	@Id @GeneratedValue
-	@Column(name = "email")
+	@Column
 	private String email;
 	
-	@Column(name = "password")
+	@Column
 	private String password;
 	
-	@Column(name = "number")
+	@Column
 	private String number;
 	
+	public User(){}
 	
 	public User(String name, String username, String email, String number, String password) {
 		super();

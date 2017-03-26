@@ -2,13 +2,13 @@ package org.celebino.persistence.service.impl;
 
 import java.util.List;
 
-import org.celebino.persistence.dao.GardenDao;
+import org.celebino.persistence.dao.IGardenDao;
 import org.celebino.persistence.model.Garden;
 import org.celebino.persistence.service.IGardenService;
 
 public class GardenService implements IGardenService {
 	
-	private static GardenDao gardenDao;
+	private static IGardenDao gardenDao;
 	
 	@Override
 	public Garden findById(Long id) {

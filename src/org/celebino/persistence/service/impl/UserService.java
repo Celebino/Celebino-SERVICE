@@ -2,7 +2,7 @@ package org.celebino.persistence.service.impl;
 
 import java.util.List;
 
-import org.celebino.persistence.dao.UserDao;
+import org.celebino.persistence.dao.IUserDao;
 import org.celebino.persistence.model.User;
 import org.celebino.persistence.service.IUserService;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserService implements IUserService {
 
-    private static UserDao userDao;
+    private static IUserDao userDao;
 
 	
 	@Override

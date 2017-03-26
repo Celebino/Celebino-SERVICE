@@ -3,7 +3,7 @@ package org.celebino.persistence.service.impl;
 import java.util.List;
 
 
-import org.celebino.persistence.dao.ArtificialLightDao;
+import org.celebino.persistence.dao.IArtificialLightDao;
 import org.celebino.persistence.model.ArtificialLight;
 import org.celebino.persistence.service.IArtificialLightService;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ArtificialLightService implements IArtificialLightService {
 
-    private static ArtificialLightDao artificialLightDao;
+    private static IArtificialLightDao artificialLightDao;
 	
     
     

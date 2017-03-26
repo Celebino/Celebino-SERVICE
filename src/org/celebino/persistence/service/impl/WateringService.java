@@ -2,13 +2,13 @@ package org.celebino.persistence.service.impl;
 
 import java.util.List;
 
-import org.celebino.persistence.dao.WateringDao;
+import org.celebino.persistence.dao.IWateringDao;
 import org.celebino.persistence.model.Watering;
 import org.celebino.persistence.service.IWateringService;
 
 public class WateringService implements IWateringService {
 	
-	private static WateringDao wateringDao;
+	private static IWateringDao wateringDao;
 	
 	@Override
 	public Watering findById(Long id) {

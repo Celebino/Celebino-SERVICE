@@ -3,15 +3,18 @@ package org.celebino.controller;
 import java.util.List;
 
 import org.celebino.persistence.model.ArtificialLight;
-import org.celebino.persistence.service.ArtificialLightService;
+import org.celebino.persistence.service.impl.ArtificialLightService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 public class ArtificialLightController {
@@ -35,84 +38,82 @@ public class ArtificialLightController {
     //-------------------Retrieve Single ArtificialLight--------------------------------------------------------
      
     @RequestMapping(value = "/artificialLight/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUser(@PathVariable("id") long id) {
-        System.out.println("Fetching User with id " + id);
-        User user = userService.findById(id);
-        if (user == null) {
-            System.out.println("User with id " + id + " not found");
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<ArtificialLight> getArtificialLight(@PathVariable("id") long id) {
+        System.out.println("Fetching Artificial Light with id " + id);
+        ArtificialLight artificialLight = artificialLightService.findById(id);
+        if (artificialLight == null) {
+            System.out.println("Artificial Light with id " + id + " not found");
+            return new ResponseEntity<ArtificialLight>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+        return new ResponseEntity<ArtificialLight>(artificialLight, HttpStatus.OK);
     }
  
      
      
     //-------------------Create a ArtificialLight--------------------------------------------------------
      
-    @RequestMapping(value = "/user/", method = RequestMethod.POST)
-    public ResponseEntity<Void> createUser(@RequestBody User user,    UriComponentsBuilder ucBuilder) {
-        System.out.println("Creating User " + user.getName());
+    @RequestMapping(value = "/artificialLight/", method = RequestMethod.POST)
+    public ResponseEntity<Void> createUser(@RequestBody ArtificialLight artificialLight,    UriComponentsBuilder ucBuilder) {
+        System.out.println("Creating ArtificialLIght " + artificialLight.getId());
  
-        if (userService.isUserExist(user)) {
-            System.out.println("A User with name " + user.getName() + " already exist");
+        if (artificialLightService.isArtificialLightExist(artificialLight)) {
+            System.out.println("An Artificial Light with id " + artificialLight.getId() + " already exist");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
  
-        userService.saveUser(user);
+        artificialLightService.saveArtificialLight(artificialLight);
  
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/artificialLight/{id}").buildAndExpand(artificialLight.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
  
      
     //------------------- Update a ArtificialLight --------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
-        System.out.println("Updating User " + id);
+    @RequestMapping(value = "/artificialLight/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<ArtificialLight> updateArtificialLight(@PathVariable("id") long id, @RequestBody ArtificialLight artificialLight) {
+        System.out.println("Updating Artificial Light " + id);
          
-        User currentUser = userService.findById(id);
+        ArtificialLight currentArtificialLight = artificialLightService.findById(id);
          
-        if (currentUser==null) {
-            System.out.println("User with id " + id + " not found");
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        if (currentArtificialLight == null) {
+            System.out.println("Artificial Light with id " + id + " not found");
+            return new ResponseEntity<ArtificialLight>(HttpStatus.NOT_FOUND);
         }
  
-        currentUser.setName(user.getName());
-        currentUser.setAge(user.getAge());
-        currentUser.setSalary(user.getSalary());
+        currentArtificialLight.setGardenId(artificialLight.getGardenId());
+        currentArtificialLight.setDate(artificialLight.getDate());
          
-        userService.updateUser(currentUser);
-        return new ResponseEntity<User>(currentUser, HttpStatus.OK);
+        artificialLightService.saveArtificialLight(currentArtificialLight);
+        return new ResponseEntity<ArtificialLight>(currentArtificialLight, HttpStatus.OK);
     }
  
     //------------------- Delete a ArtificialLight --------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
-        System.out.println("Fetching & Deleting User with id " + id);
+    @RequestMapping(value = "/artificialLight/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<ArtificialLight> deleteArtificialLight(@PathVariable("id") long id) {
+        System.out.println("Fetching & Deleting Artificial Light with id " + id);
  
-        User user = userService.findById(id);
-        if (user == null) {
-            System.out.println("Unable to delete. User with id " + id + " not found");
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        ArtificialLight artificialLight = artificialLightService.findById(id);
+        if (artificialLight == null) {
+            System.out.println("Unable to delete. Artificial Light with id " + id + " not found");
+            return new ResponseEntity<ArtificialLight>(HttpStatus.NOT_FOUND);
         }
  
-        userService.deleteUserById(id);
-        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
+        artificialLightService.deleteArtificialLightById(id);
+        return new ResponseEntity<ArtificialLight>(HttpStatus.NO_CONTENT);
     }
  
      
     //------------------- Delete All ArtificialLights --------------------------------------------------------
      
-    @RequestMapping(value = "/user/", method = RequestMethod.DELETE)
-    public ResponseEntity<User> deleteAllUsers() {
-        System.out.println("Deleting All Users");
+    @RequestMapping(value = "/artificialLight/", method = RequestMethod.DELETE)
+    public ResponseEntity<ArtificialLight> deleteAllArtificialLights() {
+        System.out.println("Deleting All Artificial Lights");
  
-        userService.deleteAllUsers();
-        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
+        artificialLightService.deleteAllArtificialLights();
+        return new ResponseEntity<ArtificialLight>(HttpStatus.NO_CONTENT);
     }
  
-	
 }

@@ -1,6 +1,5 @@
 package org.celebino.persistence.dao;
 
-import org.celebino.persistence.model.ArtificialLight;
 import org.celebino.persistence.model.Garden;
 import org.springframework.data.repository.CrudRepository;
 

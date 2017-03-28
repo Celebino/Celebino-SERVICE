@@ -82,7 +82,7 @@ public class GardenController {
             return new ResponseEntity<Garden>(HttpStatus.NOT_FOUND);
         }
  
-        currentGarden.setUserId(garden.getId());
+        currentGarden.setUser(garden.getUser());
         currentGarden.setSoilHumidity(garden.getSoilHumidity());
         currentGarden.setAirTemperature(garden.getAirTemperature());
         currentGarden.setAirHumidity(garden.getAirHumidity());

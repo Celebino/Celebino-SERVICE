@@ -15,23 +15,23 @@ import javax.persistence.Table;
 public class ArtificialLight {
 	
 	@Id @GeneratedValue
-	@Column
+	@Column(name = "artificialLight_id")
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "id", table = "Garden")
-	private int gardenId;
+	@JoinColumn(name = "fk_garden_id", table = "Garden")
+	private Garden garden;
 	
-	@Column
+	@Column(name = "artificialLight_date")
 	private Date date;
 	//hour
 	
 	public ArtificialLight(){}
 	
-	public ArtificialLight(Long id, int gardenId, Date date) {
+	public ArtificialLight(Long id, Garden garden, Date date) {
 		super();
 		this.id = id;
-		this.gardenId = gardenId;
+		this.garden = garden;
 		this.date = date;
 	}
 	
@@ -44,12 +44,12 @@ public class ArtificialLight {
 		this.id = id;
 	}
 	
-	public int getGardenId() {
-		return gardenId;
+	public Garden getGarden() {
+		return garden;
 	}
 	
-	public void setGardenId(int gardenId) {
-		this.gardenId = gardenId;
+	public void setGarden(Garden garden) {
+		this.garden = garden;
 	}
 	
 	public Date getDate() {
@@ -62,7 +62,7 @@ public class ArtificialLight {
 	
 	@Override
 	public String toString() {
-		return "Watering [id=" + id + ", id_garden=" + gardenId + ", date=" + date + "]";
+		return "Watering [id=" + id + ", id_garden=" + garden.getId() + ", date=" + date + "]";
 	}
 
 }

@@ -47,8 +47,8 @@
 			<version>${hibernate.orm.version}</version>
 		</dependency>
 
-
-
+		
+	
 		<!-- Driver do MySQL -->
 		<dependency>
 			<groupId>mysql</groupId>

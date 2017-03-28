@@ -20,8 +20,8 @@ public class Hibernate {
 	    public DataSource dataSource() {
 	        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-	        // Conecta no servidor "localhost" e no banco de dados "carros"
-	        dataSource.setUrl("jdbc:mysql://localhost:3306/");
+	        // Conecta no servidor "localhost" e no banco de dados "celebino"
+	        dataSource.setUrl("jdbc:mysql://localhost:3306/celebino");
 	        // Usando o usuário "usuario"
 	        dataSource.setUsername("usuario");
 	        // E a senha "senha"

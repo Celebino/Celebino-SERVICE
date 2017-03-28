@@ -82,7 +82,7 @@ public class ArtificialLightController {
             return new ResponseEntity<ArtificialLight>(HttpStatus.NOT_FOUND);
         }
  
-        currentArtificialLight.setGardenId(artificialLight.getGardenId());
+        currentArtificialLight.setGarden(artificialLight.getGarden());
         currentArtificialLight.setDate(artificialLight.getDate());
          
         artificialLightService.saveArtificialLight(currentArtificialLight);

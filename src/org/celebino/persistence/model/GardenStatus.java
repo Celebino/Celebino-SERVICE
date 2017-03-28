@@ -15,35 +15,35 @@ import javax.persistence.Table;
 public class GardenStatus {
 	
 	@Id @GeneratedValue
-	@Column
+	@Column(name = "gardenStatus_id")
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "id", table = "Garden")
-	private Long gardenId;
+	@JoinColumn(name = "fk_garden_id", table = "Garden")
+	private Garden garden;
 	
-	@Column
+	@Column(name = "gardenStatus_date")
 	private Date date;
 	//hour
 	
-	@Column
+	@Column(name = "gardenStatu_sunLight")
 	private int sunLight;
 	
-	@Column
+	@Column(name = "gardenStatus_soilHumidity")
 	private int soilHumidity;
 	
-	@Column
+	@Column(name = "gardenStatus_airHumidity")
 	private int airHumidity;
 	
-	@Column
+	@Column(name = "gardenStatus_airTemperature")
 	private int airTemperature;
 	
 	
-	public GardenStatus(Long id, Long gardenId, Date date, int sunLight, int soilHumidity, int airHumidity,
+	public GardenStatus(Long id, Garden garden, Date date, int sunLight, int soilHumidity, int airHumidity,
 			int airTemperature) {
 		super();
 		this.id = id;
-		this.gardenId = gardenId;
+		this.garden = garden;
 		this.date = date;
 		this.sunLight = sunLight;
 		this.soilHumidity = soilHumidity;
@@ -59,11 +59,11 @@ public class GardenStatus {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getGardenId() {
-		return gardenId;
+	public Garden getGarden() {
+		return garden;
 	}
-	public void setGardenId(Long gardenId) {
-		this.gardenId = gardenId;
+	public void setGarden(Garden garden) {
+		this.garden = garden;
 	}
 	public Date getDate() {
 		return date;
@@ -100,7 +100,7 @@ public class GardenStatus {
 
 	@Override
 	public String toString() {
-		return "GardenStatus [id=" + id + ", id_garden=" + gardenId + ", date=" + date + ", sunLight=" + sunLight
+		return "GardenStatus [id=" + id + ", id_garden=" + garden.getId() + ", date=" + date + ", sunLight=" + sunLight
 				+ ", soilHumidity=" + soilHumidity + ", airHumidity=" + airHumidity + ", airTemperature="
 				+ airTemperature + "]";
 	}

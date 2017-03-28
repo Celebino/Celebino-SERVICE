@@ -83,7 +83,7 @@ public class WateringController {
         }
  
         currentWatering.setDate(watering.getDate());
-        currentWatering.setGardenId(watering.getGardenId());       
+        currentWatering.setGarden(watering.getGarden());       
     
          
         wateringService.saveWatering(currentWatering);

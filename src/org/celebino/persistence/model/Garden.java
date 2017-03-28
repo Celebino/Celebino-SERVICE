@@ -13,29 +13,29 @@ import javax.persistence.Table;
 public class Garden {
 	
 	@Id @GeneratedValue
-	@Column
+	@Column(name = "garden_id")
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "id", table = "User")
-	private Long userId;
+	@JoinColumn(name = "fk_user_id", table = "User", nullable = false)
+	private User user;
 	 
-	@Column	
+	@Column(name = "garden_soilHumidity")	
 	private int soilHumidity;
 	
-	@Column
+	@Column(name = "garden_sunLight")	
 	private int sunLight;
 	
-	@Column
+	@Column(name = "garden_airHumidity")	
 	private int airHumidity;
 	
-	@Column
+	@Column(name = "garden_airTemperature")	
 	private int airTemperature;
 
-	public Garden(Long id, Long userId, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
+	public Garden(Long id, User user, int soilHumidity, int sunLight, int airHumidity, int airTemperature) {
 		super();
 		this.id = id;
-		this.userId = userId;
+		this.user = user;
 		this.soilHumidity = soilHumidity;
 		this.sunLight = sunLight;
 		this.airHumidity = airHumidity;
@@ -51,12 +51,12 @@ public class Garden {
 	}
 
 	
-	public Long getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	
@@ -98,7 +98,7 @@ public class Garden {
 	
 	@Override
 	public String toString() {
-		return "Garden [id=" + id + ", userId=" + userId + ", soilHumidity=" + soilHumidity + ", sunLight=" + sunLight
+		return "Garden [id=" + id + ", User Id=" + user.getId() + ", soilHumidity=" + soilHumidity + ", sunLight=" + sunLight
 				+ ", airHumidity=" + airHumidity + ", airTemperature=" + airTemperature + "]";
 	}
 

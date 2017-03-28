@@ -11,43 +11,41 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id @GeneratedValue
-	@Column
-	private Long Id;
+	@Column(name = "user_id")
+	private Long id;
 	
-	@Column(unique = true)
+	@Column(name = "user_email" , unique = true)
 	private String email;
 	
-	@Column(unique = true)
+	@Column(name = "user_username" ,unique = true)
 	private String username;
 	
-	@Column
+	@Column(name = "user_name")
 	private String name;
 	
-	@Column
+	@Column(name = "user_password")
 	private String password;
 	
-	@Column
-	private String number;
+
 	
 	public User(){}
 	
-	public User(Long id, String email, String username, String name, String password, String number) {
+	public User(Long id, String email, String username, String name, String password) {
 		super();
-		Id = id;
+		this.id = id;
 		this.email = email;
 		this.username = username;
 		this.name = name;
 		this.password = password;
-		this.number = number;
 	}
 
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -87,17 +85,10 @@ public class User {
 	}
 	
 	
-	public String getNumber() {
-		return number;
-	}
 	
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", username=" + username + ", email=" + email + ", number=" + number + "]";
+		return "User [name=" + name + ", username=" + username + ", email=" + email  + "]";
 	}
 }

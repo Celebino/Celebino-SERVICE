@@ -17,7 +17,7 @@ public class Garden {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_user_id", table = "User", nullable = false)
+	@JoinColumn(name = "fk_user", nullable = false)
 	private User user;
 	 
 	@Column(name = "garden_soilHumidity")	

@@ -61,7 +61,6 @@ public class UserController {
             System.out.println("An User with id " + user.getId() + " already exist");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
- 
         userService.saveUser(user);
  
         HttpHeaders headers = new HttpHeaders();
@@ -94,7 +93,7 @@ public class UserController {
     }
  
     //------------------- Delete a User --------------------------------------------------------
-     
+    
     @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
         System.out.println("Fetching & Deleting User with id " + id);

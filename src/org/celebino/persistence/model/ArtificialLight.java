@@ -19,7 +19,7 @@ public class ArtificialLight {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_garden_id", table = "Garden")
+	@JoinColumn(name = "fk_garden_id")
 	private Garden garden;
 	
 	@Column(name = "artificialLight_date")

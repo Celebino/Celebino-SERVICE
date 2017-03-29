@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IGardenStatusDao extends CrudRepository<GardenStatus, Long> {
+	
 	public GardenStatus findById(Long id);
 
 }

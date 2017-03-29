@@ -19,12 +19,12 @@ public class GardenStatus {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_garden_id", table = "Garden")
+	@JoinColumn(name = "fk_garden_id")
 	private Garden garden;
 	
 	@Column(name = "gardenStatus_date")
 	private Date date;
-	//hour
+	//hour 
 	
 	@Column(name = "gardenStatu_sunLight")
 	private int sunLight;

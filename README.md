@@ -2,4 +2,4 @@
 
 ## Creators
 
-[Thayanne Luiza] https://github.com/thayannevls
+[Thayanne Luiza](https://github.com/thayannevls)

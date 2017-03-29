@@ -2,6 +2,6 @@
 
 ## Creators
 
-[Thayanne Luiza](https://github.com/thayannevls)
-[Arthur Ferrão](https://github.com/ArthurFerrao)
-[Gabriel Almeida](https://github.com/aLemosGabriel)
+[Thayanne Luiza](https://github.com/thayannevls) <br />
+[Arthur Ferrão](https://github.com/ArthurFerrao) <br />
+[Gabriel Almeida](https://github.com/aLemosGabriel) <br />

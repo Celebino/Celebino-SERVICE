@@ -1,7 +1,7 @@
 # Celebino-Service
 
-## Creators
+## Authors
 
-[Thayanne Luiza](https://github.com/thayannevls) <br />
 [Arthur Ferrão](https://github.com/ArthurFerrao) <br />
 [Gabriel Almeida](https://github.com/aLemosGabriel) <br />
+[Thayanne Luiza](https://github.com/thayannevls) <br />
